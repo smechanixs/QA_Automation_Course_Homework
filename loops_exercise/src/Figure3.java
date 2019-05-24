@@ -22,7 +22,7 @@ public class Figure3 {
                     System.out.print(k * step + " ");
                 }
             }
-            System.out.println("");
+            System.out.println();
         }
     }
 }
