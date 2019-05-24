@@ -4,13 +4,12 @@ public class ComputerDemo {
         Computer pc2 = new Computer(2019, 2400.90, 4200.30, 1352.10);
 
         int result = pc1.comparePrice(pc2);
-        if (result < 0){
+        if (result < 0) {
             System.out.println("PC 1 is more expensive than PC 2.");
         }
-        if (result > 0){
+        if (result > 0) {
             System.out.println("PC 2 is more expensive than PC 1.");
-        }
-        else {
+        } else {
             System.out.println("The price of PC 1 is equal to the price of PC 2.");
         }
     }

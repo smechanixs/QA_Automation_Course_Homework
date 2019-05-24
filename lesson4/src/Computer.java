@@ -34,14 +34,13 @@ public class Computer {
 
     }
 
-    int comparePrice(Computer otherPc){
-        if (this.price > otherPc.price){
+    int comparePrice(Computer otherPc) {
+        if (this.price > otherPc.price) {
             return -1;
         }
-        if (this.price < otherPc.price){
-            return  1;
-        }
-        else {
+        if (this.price < otherPc.price) {
+            return 1;
+        } else {
             return 0;
         }
     }
