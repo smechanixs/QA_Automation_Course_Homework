@@ -2,8 +2,8 @@ public class Student {
     String name;
     String subject;
     double grade;
-    byte yearInCollege;
-    byte age;
+    int yearInCollege;
+    int age;
     boolean isDegree;
     double money;
 
@@ -16,7 +16,7 @@ public class Student {
 
     }
 
-    Student(String name, String subject, double grade, byte yearInCollege, byte age, boolean isDegree, double money) {
+    Student(String name, String subject, double grade, int yearInCollege, int age, boolean isDegree, double money) {
         this();
         this.name = name;
         this.subject = subject;
@@ -29,15 +29,19 @@ public class Student {
 
     void upYear() {
         if (!isDegree) {
-            yearInCollege++;
-            if (yearInCollege == 4) {
+            this.yearInCollege++;
+            if (this.yearInCollege >= 4) {
                 isDegree = true;
                 System.out.println("The student has already graduated!");
+
+            } else {
+                System.out.println(this.name + " is in " + this.yearInCollege + " year in college.");
             }
         } else {
             System.out.println("The student has already graduated!");
 
         }
+
     }
 
     double receiveScholarship(double min, double amount) {

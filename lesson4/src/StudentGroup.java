@@ -17,11 +17,12 @@ public class StudentGroup {
     void addStudent(Student s) {
         if (s.subject.equals(groupSubject)) {
             if (freePlaces >= 1) {
-                for (int i = 0; i <= students.length; i++) {
+                for (int i = 0; i < students.length; i++) {
                     students[i] = s;
                     freePlaces--;
+                    System.out.println(s.name + " ");
+                    break;
                 }
-
             }
         }
     }
@@ -29,7 +30,7 @@ public class StudentGroup {
     void emptyGroup() {
         students = new Student[5];
         freePlaces = 5;
-
+        System.out.println(this.groupSubject + " is now empty!");
     }
 
 }
