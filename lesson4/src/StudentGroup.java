@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class StudentGroup {
     String groupSubject;
     Student[] students;
@@ -20,9 +22,13 @@ public class StudentGroup {
                 for (int i = 0; i < students.length; i++) {
                     students[i] = s;
                     freePlaces--;
-                    System.out.println(s.name + " ");
+                    System.out.print(s.name + " has joined the " + groupSubject + " group.");
+                    System.out.println(this.freePlaces + " places left.");
+                    System.out.println("------------------------------------");
                     break;
                 }
+            } else {
+                System.out.println("There are no more free places in this group!");
             }
         }
     }
@@ -33,4 +39,8 @@ public class StudentGroup {
         System.out.println(this.groupSubject + " is now empty!");
     }
 
+//    String theBestStudent(StudentGroup group) {
+//
+//
+//    }
 }
