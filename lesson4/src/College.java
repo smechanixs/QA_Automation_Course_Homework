@@ -28,6 +28,7 @@ public class College {
         Maths.addStudent(Kriso);
         Maths.addStudent(Stoyan);
 
+        Maths.theBestStudent();
 
 
 

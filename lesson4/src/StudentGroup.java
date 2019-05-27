@@ -1,3 +1,5 @@
+import com.sun.deploy.util.ArrayUtil;
+
 import java.util.Arrays;
 
 public class StudentGroup {
@@ -19,9 +21,10 @@ public class StudentGroup {
     void addStudent(Student s) {
         if (s.subject.equals(groupSubject)) {
             if (freePlaces >= 1) {
-                for (int i = 0; i < students.length; i++) {
+                for (int i = students.length - freePlaces; i < students.length; i++) {
                     students[i] = s;
                     freePlaces--;
+                    System.out.println(this.students.toString());
                     System.out.print(s.name + " has joined the " + groupSubject + " group.");
                     System.out.println(this.freePlaces + " places left.");
                     System.out.println("------------------------------------");
@@ -39,8 +42,16 @@ public class StudentGroup {
         System.out.println(this.groupSubject + " is now empty!");
     }
 
-//    String theBestStudent(StudentGroup group) {
-//
-//
-//    }
+    String theBestStudent() {
+        double hg = 0.00;
+        String studentName = "";
+        for (int counter = 0; counter < this.students.length; counter++){
+            if (hg < this.students[counter].grade) {
+                hg = this.students[counter].grade;
+                studentName = this.students[counter].name;
+            }
+        }
+        System.out.println("The student with hg is: " + studentName);
+        return studentName;
+    }
 }
