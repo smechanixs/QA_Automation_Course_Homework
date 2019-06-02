@@ -16,6 +16,19 @@ public class Student {
 
     }
 
+    @Override
+    public String toString() {
+        return "Student{" +
+                "name='" + name + '\'' +
+                ", subject='" + subject + '\'' +
+                ", grade=" + grade +
+                ", yearInCollege=" + yearInCollege +
+                ", age=" + age +
+                ", isDegree=" + isDegree +
+                ", money=" + money +
+                '}';
+    }
+
     Student(String name, String subject, double grade, int yearInCollege, int age, boolean isDegree, double money) {
         this();
         this.name = name;

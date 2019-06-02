@@ -24,14 +24,13 @@ public class StudentGroup {
                 for (int i = students.length - freePlaces; i < students.length; i++) {
                     students[i] = s;
                     freePlaces--;
-                    System.out.println(this.students.toString());
-                    System.out.print(s.name + " has joined the " + groupSubject + " group.");
+                    System.out.println(s.name + " has joined the " + groupSubject + " group.");
                     System.out.println(this.freePlaces + " places left.");
                     System.out.println("------------------------------------");
                     break;
                 }
             } else {
-                System.out.println("There are no more free places in this group!");
+                System.out.println("There are no more free places in " + groupSubject + " group!");
             }
         }
     }
@@ -39,7 +38,7 @@ public class StudentGroup {
     void emptyGroup() {
         students = new Student[5];
         freePlaces = 5;
-        System.out.println(this.groupSubject + " is now empty!");
+        System.out.println(this.groupSubject + " group is now empty!");
     }
 
     String theBestStudent() {
@@ -51,7 +50,16 @@ public class StudentGroup {
                 studentName = this.students[counter].name;
             }
         }
-        System.out.println("The student with hg is: " + studentName);
+        System.out.println("The student with highest grade in " + this.groupSubject + " is " + studentName);
         return studentName;
+    }
+    void printStudentsInGroup(){
+        System.out.println("Student info in " + this.groupSubject + " :");
+        for (int i = 0; i < this.students.length; i++){
+            System.out.println("------------------------------------");
+            System.out.println(this.students[i]);
+        }
+
+
     }
 }
