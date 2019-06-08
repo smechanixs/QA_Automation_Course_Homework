@@ -1,35 +1,26 @@
-public class Employee extends Person {
-    double daySalary;
+class Employee extends Person {
+    private double daySalary;
 
-    public Employee(String name, int age, boolean isMan, double daySalary) {
+    private double getDaySalary() {
+        return daySalary;
+    }
+
+    Employee(String name, int age, boolean isMan, double daySalary) {
         super(name, age, isMan);
         this.daySalary = daySalary;
     }
 
-    double calculateOvertime(double hours) {
-
-        double overtime;
-        if (Employee.this.age < 18) {
-            overtime = 0;
+    double calculateOvertime(double otHours) {
+        double overtimeSalary;
+        if (Employee.this.getAge() < 18) {
+            overtimeSalary = 0;
         } else {
-
-            overtime = (daySalary / 8) * 1.5 * hours;
+//            Assuming that the normal work day is 8 hours long
+            overtimeSalary = (daySalary / 8) * 1.5 * otHours;
         }
-        double totalSalary = daySalary + overtime;
-        return totalSalary;
+        return overtimeSalary;
     }
-
-    @Override
-    public String toString() {
-        return "Employee{" +
-                "daySalary=" + daySalary +
-                ", name='" + name + '\'' +
-                ", age=" + age +
-                ", isMan=" + isMan +
-                '}';
-    }
-
     void showEmployeeInfo(Employee e) {
-        System.out.println(e.toString());
+        System.out.println("Name: " + e.getName() + ", Age: " + e.getAge() + ", Man: " + e.isMan() + ", Salary: " + e.getDaySalary());
     }
 }

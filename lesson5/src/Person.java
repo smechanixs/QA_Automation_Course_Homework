@@ -1,27 +1,30 @@
-public class Person {
-    String name;
-    int age;
-    boolean isMan;
-    Person(){
+class Person {
+    private String name;
+    private int age;
+    private boolean isMan;
 
-    }
-
-    public Person(String name, int age, boolean isMan) {
+    Person(String name, int age, boolean isMan) {
         this.name = name;
         this.age = age;
         this.isMan = isMan;
     }
 
-    @Override
-    public String toString() {
-        return "Person{" +
-                "name='" + name + '\'' +
-                ", age=" + age +
-                ", isMan=" + isMan +
-                '}';
+    String getName() {
+        return name;
     }
 
-    void showPersonInfo(Person p) {
-        System.out.println(p.toString());
+    int getAge() {
+        return age;
     }
+
+
+    boolean isMan() {
+        return isMan;
+    }
+
+
+    void showPersonInfo(Person p) {
+        System.out.println("Name: " + p.getName() + ", Age: " + p.getAge() + ", Man: " + p.isMan());
+    }
+
 }

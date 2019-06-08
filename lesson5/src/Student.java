@@ -1,22 +1,23 @@
-public class Student extends Person {
-    double score;
+class Student extends Person {
+    private double score;
 
-    @Override
-    public String toString() {
-        return "Student{" +
-                "score=" + score +
-                ", name='" + name + '\'' +
-                ", age=" + age +
-                ", isMan=" + isMan +
-                '}';
+    private double getScore() {
+        return score;
     }
 
-    public Student(String name, int age, boolean isMan, double score) {
+
+    Student(String name, int age, boolean isMan, double score) {
         super(name, age, isMan);
         this.score = score;
     }
+
     void showStudentInfo(Student s) {
-        System.out.println(s.toString());
+        System.out.println("Name: " + s.getName() + ", Age: " + s.getAge() + ", Man: " + s.isMan() + ", Score: " + s.getScore());
     }
 
 }
+
+
+
+
+
